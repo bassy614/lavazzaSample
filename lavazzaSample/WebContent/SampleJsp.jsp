@@ -5,6 +5,7 @@
 <%
 	Date date = new Date();
 	String dateStr = date.toString();
+	boolean isRunning = (Boolean) session.getAttribute("isRunning");
 %>
 <!DOCTYPE html>
 <html>
@@ -17,11 +18,16 @@
 これは家CONのサンプルです<br>
 現在の時刻は<%= dateStr %>です
 </p>
-<!-- isRunningがfalseの時 -->
-<form method="post" action="/lavazzaSample/SampleServlet?isRunning=true">
-<input type="submit" value="start">
-<!-- isRunningがtrueの時 -->
-
-</form>
+<% if( isRunning == false ){ %>
+	<!-- isRunningがfalseの時 -->
+	<form method="post" action="/lavazzaSample/SampleServlet?isRunning=true">
+	<input type="submit" value="start">
+	</form>
+<% } else { %>
+	<!-- isRunningがtrueの時 -->
+	<form method="post" action="/lavazzaSample/SampleServlet?isRunning=false">
+	<input type="submit" value="stop">
+	</form>
+<% } %>
 </body>
 </html>
