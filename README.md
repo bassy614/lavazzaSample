@@ -1,1 +1,3 @@
 # lavazzaSample
+このREADME.mdファイルと同じ階層にあるlavazzaSampleがプロジェクトのフォルダです。
+インポートして開発します。
