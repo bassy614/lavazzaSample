@@ -2,6 +2,6 @@ package model;
 
 import java.util.Date;
 
-public class LogicSample {
+public class SampleLogic {
 //	Date date = new Date();
 }
