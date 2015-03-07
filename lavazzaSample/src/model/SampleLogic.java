@@ -1,7 +1,8 @@
 package model;
 
-import java.util.Date;
-
 public class SampleLogic {
-//	Date date = new Date();
+	/*
+	 * システム始動と終了のメソッド
+	 */
+	
 }
