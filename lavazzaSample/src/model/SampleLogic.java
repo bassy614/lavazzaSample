@@ -1,15 +1,11 @@
 package model;
 
-import javax.servlet.http.HttpServletRequest;
-
 public class SampleLogic {
 	/*
 	 * システム始動と終了のメソッド
 	 */
-	public boolean doIt(HttpServletRequest request) {
+	public boolean doIt(boolean isRunning) {
 		boolean done = false;
-		// セッションスコープからisRunningの値を取得
-		boolean isRunning = (Boolean) request.getSession().getAttribute("isRunning");
 		if (isRunning == true) {
 			// isRunningがtrueならポーリングをマルチスレッドで開始
 			System.out.println("ポーリングしているつもり");

@@ -63,7 +63,7 @@ public class SampleServlet extends HttpServlet {
 		}
 		boolean done = false;
 		while(done == false){
-			done = logic.doIt(request);
+			done = logic.doIt(isRunning);
 		}
 		// SampleJspに表示を依頼
 		RequestDispatcher rd = request.getRequestDispatcher("/SampleJsp.jsp");
