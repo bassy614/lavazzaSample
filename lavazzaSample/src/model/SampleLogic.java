@@ -1,19 +1,30 @@
 package model;
 
+/*
+ * システム始動と終了を管轄するクラス
+ */
 public class SampleLogic {
-	/*
-	 * システム始動と終了のメソッド
-	 */
+	private boolean done;
+	private SampleThread thread;
+	
+	public SampleLogic(){
+		done = false;
+		thread = new SampleThread();
+	}
+	
 	public boolean doIt(boolean isRunning) {
-		boolean done = false;
+		
 		if (isRunning == true) {
 			// isRunningがtrueならポーリングをマルチスレッドで開始
 			System.out.println("ポーリングしているつもり");
+			thread.setIsRunning(true);
+			thread.start();
 			done = true;
 		} else {
 			// isRunningがfalseならポーリングを終了
-			System.out.println("ポーリング終わらせたつもり");
+			thread.setIsRunning(false);
 			done = true;
+			System.out.println("ポーリング終わらせたつもり");
 		}
 		return done;
 	}

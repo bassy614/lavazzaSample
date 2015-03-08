@@ -20,6 +20,7 @@
 </p>
 <% if( isRunning == false ){ %>
 	<!-- isRunningがfalseの時 -->
+	<!-- TODO システム稼働中のメッセージを表示 -->
 	<form method="post" action="/lavazzaSample/SampleServlet?isRunning=true">
 	<input type="submit" value="start">
 	</form>
